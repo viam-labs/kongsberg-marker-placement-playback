@@ -1,0 +1,13 @@
+{
+    "module_id": "kongsberg:marker-placement-playback-app",
+    "visibility": "public",
+    "url": "https://github.com/kongsberg/marker-placement-playback-app",
+    "description": "A web app to playback marker placement",
+    "applications": [
+      {
+        "name": "marker-placement-playback-app",
+        "type": "multi_machine",
+        "entrypoint": "dist/index.html"
+      }
+    ]
+  }
