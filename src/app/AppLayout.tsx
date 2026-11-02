@@ -67,7 +67,13 @@ export function AppLayout() {
           </div>
         </div>
         {!isLoaderOpen && (
-          <TimeRangeNav minTs={minTs} maxTs={maxTs} rangeStart={rangeStart} rangeEnd={rangeEnd} onRangeChange={updateRange} />
+          <TimeRangeNav
+            minTs={minTs}
+            maxTs={maxTs}
+            rangeStart={rangeStart}
+            rangeEnd={rangeEnd}
+            onRangeChange={updateRange}
+          />
         )}
       </header>
 

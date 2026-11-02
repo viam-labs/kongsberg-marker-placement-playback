@@ -79,6 +79,10 @@ export function sensorNamesOf(frames: { sensorName: string }[]): string[] {
 /** Buckets frames by sensorName; `names` should come from sensorNamesOf(frames). */
 export function groupBySensor<T extends { sensorName: string }>(frames: T[], names: string[]): Map<string, T[]> {
   const map = new Map<string, T[]>();
-  for (const name of names) map.set(name, frames.filter((f) => f.sensorName === name));
+  for (const name of names)
+    map.set(
+      name,
+      frames.filter((f) => f.sensorName === name),
+    );
   return map;
 }
