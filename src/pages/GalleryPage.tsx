@@ -36,9 +36,7 @@ export function GalleryPage() {
             <h2 className="text-sm font-semibold text-slate-200">Timeline</h2>
             <span className="text-xs text-slate-500">Click or drag to seek</span>
           </div>
-          <span className="font-mono text-xs text-slate-400">
-            {rangeStart < rangeEnd ? formatTs(currentTs) : '—'}
-          </span>
+          <span className="font-mono text-xs text-slate-400">{rangeStart < rangeEnd ? formatTs(currentTs) : '—'}</span>
         </div>
         {tracks.some((t) => t.moments.length > 0) ? (
           <MultiTrackTimeline

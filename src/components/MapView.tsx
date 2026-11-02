@@ -52,7 +52,14 @@ interface ReadingPopupProps {
   onCancelMeasure: () => void;
 }
 
-function ReadingPopup({ r, onJumpToTime, pendingAnchor, onStartMeasure, onFinishMeasure, onCancelMeasure }: ReadingPopupProps) {
+function ReadingPopup({
+  r,
+  onJumpToTime,
+  pendingAnchor,
+  onStartMeasure,
+  onFinishMeasure,
+  onCancelMeasure,
+}: ReadingPopupProps) {
   const map = useMap();
   const isAnchor = pendingAnchor?.marker_id === r.marker_id;
 
@@ -161,7 +168,8 @@ export function MapView({ allReadings, visible, justDropped, onJumpToTime }: Map
       {pendingAnchor && (
         <div className="absolute top-3 left-1/2 z-[1000] flex -translate-x-1/2 items-center gap-3 rounded-full border border-violet-400/30 bg-slate-900/95 px-4 py-1.5 text-sm text-violet-100 shadow-2xl">
           <span>
-            Measuring from <span className="font-mono font-semibold">{pendingAnchor.marker_id}</span> — click another marker
+            Measuring from <span className="font-mono font-semibold">{pendingAnchor.marker_id}</span> — click another
+            marker
           </span>
           <button
             onClick={cancelMeasure}
@@ -262,11 +270,15 @@ export function MapView({ allReadings, visible, justDropped, onJumpToTime }: Map
                   </div>
                   <div className="flex justify-between gap-3">
                     <dt>time gap</dt>
-                    <dd className="font-mono text-slate-100">{formatDuration(Math.abs(measurement.b.ts - measurement.a.ts))}</dd>
+                    <dd className="font-mono text-slate-100">
+                      {formatDuration(Math.abs(measurement.b.ts - measurement.a.ts))}
+                    </dd>
                   </div>
                   <div className="flex justify-between gap-3">
                     <dt>depth Δ</dt>
-                    <dd className="font-mono text-slate-100">{Math.abs(measurement.b.depth - measurement.a.depth).toFixed(2)}</dd>
+                    <dd className="font-mono text-slate-100">
+                      {Math.abs(measurement.b.depth - measurement.a.depth).toFixed(2)}
+                    </dd>
                   </div>
                 </dl>
                 <button

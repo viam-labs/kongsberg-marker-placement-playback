@@ -18,3 +18,9 @@ setup-linux:
 
 make module-beta: dist/index.html meta-beta.json
 	@./etc/module-beta.sh
+
+# Fixes lint and formatting in place; CI runs the same checks without fixing.
+.PHONY: lint
+lint: node_modules
+	npm run lint -- --fix
+	npx --yes prettier@3.9.10 --write src

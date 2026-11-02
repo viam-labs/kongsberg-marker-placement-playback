@@ -33,7 +33,7 @@ jobs:
       - name: oxlint
         run: npm run lint
 
-      # Run `npx prettier@3.9.10 --write src` to fix formatting locally.
+      # Run `make lint` to fix formatting locally.
       - name: Prettier
         run: npx --yes prettier@3.9.10 --check src
 
